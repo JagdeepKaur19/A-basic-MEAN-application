@@ -1,0 +1,58 @@
+<div class="container content">
+
+    <div class="row well">
+        <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background: skyblue;">
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a href="">Registration</a>
+                </li> 
+                
+            </ul>
+        </nav> -->
+        <h4>Candidate Registration</h4>
+        <form>
+            <fieldset class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" ng-model="RCTRL.user.firstname">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="lastname">Lastname</label>
+                <input type="text" class="form-control" id="lastname"  name="lastname" ng-model="RCTRL.user.lastname">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email"  name="email" ng-model="RCTRL.user.email">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="phone">Phone</label>
+                <input type="number" class="form-control" id="phone" name="phone" ng-model="RCTRL.user.phone">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" ng-model="RCTRL.user.username">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" ng-model="RCTRL.user.password">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for ="question" >Select Your security Question:</label>
+                <select name="question" id="question" ng-options="option for option in RCTRL.data" data-ng-model="RCTRL.user.question">     
+                </select>
+            </fieldset>
+                <fieldset class="form-group">
+                <label>Answer</label>
+                <input type="text" class="form-control" id ="answer" name="answer" ng-model="RCTRL.user.answer">
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary" data-ng-click="RCTRL.registerUser()">Submit</button>
+    
+        </form>
+    </div>
+</div>

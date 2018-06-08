@@ -1,0 +1,18 @@
+<div class="container content">
+
+    <div class="row well">
+        <h4>Login</h4>
+    <form>
+        <fieldset class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control"  ng-model="LCTRL.user.username" id="username" name="username"></fieldset>
+
+        <fieldset class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" ng-model="LCTRL.user.password" id="password" name="password"></fieldset>
+    
+    <button type="submit" class="btn btn-primary" data-ng-click="LCTRL.loginUser()">Submit</button>
+    <a ui-sref="passwordReset">Forgor Password</a>
+</form>
+    </div>
+</div>

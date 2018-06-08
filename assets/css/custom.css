@@ -1,0 +1,22 @@
+.container-fluid {
+    padding: 60px 50px;
+}
+
+input[type="text"]
+{
+    width:300px
+}
+
+input[type="number"]
+{
+    width: 300px;
+}
+
+input[type="password"]
+{
+    width:300px;
+}
+.content {
+    max-width: 500px;
+    margin: auto;
+}

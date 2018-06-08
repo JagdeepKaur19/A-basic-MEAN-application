@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>loginApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrinkl-to-fit=no">
+    <meta name="description" content="A simple Login application">
+    <meta name="keywords" content="HTML,CSS,JSON,JAVASCRIPT,Angular.JS, Node.JS,MongoDB">
+    <meta name="author" content="Jagdeep Kaur Sandhu">
+
+    <!--<link rel="icon" href="assets/images/icon-favicon.png">-->
+
+  
+    <!-- build:css build/css/vendor.css-->
+    <!--<link rel="stylesheet" href="assets/libs/jquery-ui/themes/smoothness/jquery-ui.min.css" type="text/css">-->
+    <link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
+    <link rel="stylesheet" href="assets/libs/sweetalert2/dist/sweetalert2.min.css"type="text/css"> 
+    
+
+</head>
+
+<body ng-app="loginApp" ng-controller="MainController as MainCtrl">
+        <div class="container">
+                <div class="row">
+                    <h2>Access.com</h2>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" ui-sref="home">Home</a>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a class="nav-link active" ui-sref="login">Login</a>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a class="nav-link active" ui-sref="register">Register</a>
+                    </ul>
+                </div>
+            </div>
+            
+    <div ui-view></div>
+
+</body>
+
+<!-- build:js build/js/vendor.js-->
+<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="assets/libs/angular/angular.min.js"></script>
+<script src= "assets/libs/angular-resource/angular-resource.min.js"></script>
+<script src="assets/libs/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+
+
+
+
+<!-- build:js build/js/app.js-->
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+<script src="app/app.env.js"></script>
+<script src = "app/app.constants.js"></script>
+
+<!-- angular services -->
+<script src="app/components/mainController/main.service.js"></script>
+<!--<script src="app/components/dashboard/dashboard.service.js"></script>-->
+<script src="app/components/dashboard/login/login.service.js"></script>
+<script src="app/components/dashboard/register/register.service.js"></script>
+<script src="app/components/dashboard/forgotPassword/forgotPassword.service.js"></script>
+
+<!-- angular controller -->
+<script src="app/components/mainController/main.controller.js"></script>
+<script src="app/components/dashboard/dashboard.controller.js"></script>
+<script src="app/components/dashboard/home/home.controller.js"></script>
+<script src="app/components/dashboard/login/login.controller.js"></script>
+<script src="app/components/dashboard/register/register.controller.js"></script>
+<script src="app/components/dashboard/forgotPassword/forgotPassword.controller.js"></script>
+
+
+</html>
