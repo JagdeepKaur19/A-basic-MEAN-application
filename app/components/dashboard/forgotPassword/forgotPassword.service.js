@@ -6,6 +6,11 @@ function(appConfig, $resource){
             return $resource(appConfig.serviceUrl + '/forgotPass',{
                 id : '@_id'
 
+            }, {
+                forgotPassword : {
+                    method: 'PUT',
+                    url: appConfig.serviceUrl + '/forgotPassword'
+                }
             }
         )
         }

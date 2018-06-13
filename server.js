@@ -11,7 +11,8 @@ var register = require("./server/routes/register");
 
 app.post('/login', register.loginUser);
 app.post('/register',register.registerUser );
-app.put('/api/forgotPassword', register.forgotPassword );
+app.put('/forgotPassword', register.forgotPassword );
+app.put('/changePassword', register.changePassword );
 
 app.use('/', express.static(__dirname + '/'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));

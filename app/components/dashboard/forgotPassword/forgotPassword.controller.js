@@ -7,19 +7,17 @@ function($state, $rootScope, appConfig, ForgotPasswordService){
     function init(){
 
     }
-    
-    vm.data = ['What is your pet name?', 'What is the name of your best friend?','What is your first teacher name?']
+vm.data = ['What is your pet name?', 'What is the name of your best friend?','What is your first teacher name?']
     
     vm.forgotPassword = function(){
-        ForgotPasswordService.resource(appConfig).forgotPassword({
-            newPass = {
+        var newPass = {
             "email" : vm.pass.email,
             "answer": vm.pass.answer
             }
-            //console.log(newPass);
-        },
+            console.log(newPass);
+        ForgotPasswordService.resource(appConfig).forgotPassword(newPass ,
         function(response){
-            console.log("")
+            console.log(response);
         }, function(error){
             console.log("error");
         })

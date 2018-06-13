@@ -1,6 +1,7 @@
 require("../models/register")
 var Register = mongoose.model('userRegister');
 var nodemailer = require('nodemailer');
+var randtoken = require('randomatic');
 //var User = mongoose.model('users');
 
 exports.registerUser = function(req, res){
@@ -49,14 +50,15 @@ Register.find({"username": { $regex: new RegExp(req.body.username, "i") }, "pass
 }
 
 exports.forgotPassword = function(req, res){
-    var token = randtoken.generate(16);
-Register.findOneAndUpdate({ email: req.body.email, "question": req.body.question},
+    var token = randtoken('Aa0', 7);
+Register.findOneAndUpdate({ email: req.body.email, 'question.a1' : req.body.answer},
 { $set: { password: token } }, function(err, result) {
     if(err){
         console.log("password doesn't channge");
         res.send({ status: false, message: "error occured"});
     }
      else{
+         console.log(result);
          let transporter = nodemailer.createTransport({
              host: 'smtp.gmail.com',
              port: 587,
@@ -70,12 +72,12 @@ Register.findOneAndUpdate({ email: req.body.email, "question": req.body.question
             debug: true
          });
          let mailOptions = {
-             from: "no-reply@gmail.com",
+             from: "no-reply"+"no-reply@gmail.com",
              to: req.body.email,
              subject: 'Login Application email reset',
              html: 'Hello <strong>' + result.firstname +
              '</strong>,<br><br> Your password has been modified.<br>Your new Password is <strong>' + token +
-             '</strong>.<br>For more information contact us on: access.com <br><br>Thank you & Regards,<br>Access Team'
+             '</strong>.<br>For more information contact us on: http://localhost:3000/#/passwordReset <br><br>Thank you & Regards,<br>Access Team'
          };
 
          transporter.sendMail(mailOptions, function(error, info){
@@ -89,5 +91,36 @@ Register.findOneAndUpdate({ email: req.body.email, "question": req.body.question
          });
      }
 })
+
+}
+
+exports.changePassword = function(req, res){
+
+    Register.findOneAndUpdate({email: req.body.email, password: req.body.oldPass}, {$set: {password: req.body.newPass }}, function(err, result){
+        if (err) {
+            res.send({ status: false, message: "error occurred", err });
+        }
+        else {
+            console.log(result)
+            res.send({ status: true, message: "password has been modified" });
+            
+        }
+    })
+
+
+    // Register.count({ email: req.body.email, password: req.body.oldPass}, function(err, result){
+    //     if (err) {
+    //         res.send({ status: false, message: "error occurred", err });
+    //     }
+    //     else {
+    //         if (result == 1){
+    //             Register.update({ email: req.body.email }, { $set: {password: req.body.newPass } }, function(err, result){
+    //                 res.send({ status: true, message: "password has been modified" });
+    //             });
+    //         } else{
+    //             res.send({ status: false, message: "password doesnt match"} );
+    //         }
+    //     }
+    // });
 
 }

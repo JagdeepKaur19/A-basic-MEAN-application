@@ -39,6 +39,13 @@ function($stateProvider, $urlRouterProvider){
         templateUrl: 'app/components/dashboard/forgotPassword/forgotPassword.view.html'
     })
 
+    .state('changePassword', {
+        url: '/changePassword',
+        controller: 'ChangePasswordController',
+        controllerAs: 'CPCTRL',
+        templateUrl: 'app/components/dashboard/changePassword/changePassword.view.html'
+    })
+
     $urlRouterProvider.otherwise('/dashboard')
 }])
 .run(['$rootScope', '$state',
