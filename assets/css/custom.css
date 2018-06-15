@@ -20,3 +20,18 @@ input[type="password"]
     max-width: 500px;
     margin: auto;
 }
+body {
+    padding-top: 54px;
+  }
+  
+  @media (min-width: 492px) {
+    body {
+      padding-top: 56px;
+    }
+  }
+  
+.center {
+    text-align: center;
+    color: red;
+}
+  
