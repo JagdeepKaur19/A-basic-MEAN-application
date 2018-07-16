@@ -46,6 +46,13 @@ function($stateProvider, $urlRouterProvider){
         templateUrl: 'app/components/dashboard/changePassword/changePassword.view.html'
     })
 
+    .state('segment', {
+        url: '/segment',
+        controller: '',
+        controllerAs: '',
+        templateUrl: 'app/components/dashboard/segmentOne/segmentOne.view.html'
+    })
+
     $urlRouterProvider.otherwise('/dashboard')
 }])
 .run(['$rootScope', '$state',
