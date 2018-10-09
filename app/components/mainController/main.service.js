@@ -1,6 +1,6 @@
 angular.module('loginApp')
-.service('MainService', ['$state', '$rootscope',
-function($state, $rootscope){
+.service('MainService', ['$state', '$rootScope',
+function($state, $rootScope){
     var mainService = {}
     return mainService;
 }])
